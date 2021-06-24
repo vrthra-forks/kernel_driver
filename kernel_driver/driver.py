@@ -112,8 +112,8 @@ class KernelDriver:
             tree0.label = success + status0.status  # type: ignore
             live.stop()
         self.channel_tasks = []
-        self.channel_tasks.append(asyncio.create_task(self.listen_iopub()))
-        self.channel_tasks.append(asyncio.create_task(self.listen_shell()))
+        self.channel_tasks.append(asyncio.get_event_loop().create_task(self.listen_iopub()))
+        self.channel_tasks.append(asyncio.get_event_loop().create_task(self.listen_shell()))
 
     async def stop(self) -> None:
         self.kernel_process.send_signal(signal.SIGINT)
