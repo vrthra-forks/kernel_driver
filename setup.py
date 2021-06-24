@@ -8,7 +8,7 @@ setup(
     author_email="david.brochart@gmail.com",
     description="A Jupyter kernel driver",
     packages=["kernel_driver"],
-    python_requires=">=3.7",
+    python_requires=">=3.6",
     install_requires=[
         "pyzmq",
         "python-dateutil",
